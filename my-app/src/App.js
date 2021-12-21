@@ -6,24 +6,28 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import TinderCard from "./TinderCard";
+import TinderCards from "./TinderCards";
+import SwipeButton from "./SwipeButton";
 
 
-function App () {
+
+function App() {
   return (
     <div className="App">
-      <Header />
-      <Router>
+
+      <Router> 
         <Switch>
           <Route path="/chat">
+            <Header backButton="/chat" />
             <h1>i am at chat page</h1>
           </Route>
           <Route path="/">
-            <TinderCard />
+            <Header />
+            <TinderCards />
+            <SwipeButton />
           </Route>
         </Switch>
-      </Router> 
-     
+      </Router>
     </div>
   )
 }
